@@ -22,6 +22,18 @@ body {
     border: none;
 }
 
+ul{
+    display: flex;
+}
+
+li{
+
+    background-color: white;
+    color:  rgb(72, 212, 17);
+    flex-direction: row;
+    
+}
+
 #hint:hover, #reset:hover{
 
     background-color: rgb(28, 160, 28);
