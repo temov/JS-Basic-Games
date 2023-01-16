@@ -12,6 +12,8 @@ window.onload = function () {
     let counter;
     let liElem;
     let space;
+    let createdUl;
+    let correctWord;
 
     //get elements
 
@@ -29,14 +31,13 @@ window.onload = function () {
     let keys = function () {
 
         let letter = document.getElementById('letters');
-        let createdUl = document.createElement('ul');
+        createdUl = document.createElement('ul');
         for (let i = 0; i < alphabet.length; i++) {
             createdUl.id = 'alphabet';
             liElem = document.createElement('li');
             liElem.innerHTML = alphabet[i];
             check();
             letter.appendChild(createdUl);
-            
             createdUl.appendChild(liElem);
             console.log(letter.innerHTML);
         }
@@ -169,8 +170,7 @@ window.onload = function () {
    document.getElementById('reset').onclick = function() {
     correctWord.parentNode.removeChild(correctWord);
     createdUl.parentNode.removeChild(createdUl);
-    document.getElementsByTagName('li').setAttribute("style", "background-color:white; color:rgb(72, 212, 17);")
-    showClue.innerHTML = "";
+    clueText.innerHTML = "";
     startPlay();
   }
 }
