@@ -100,6 +100,7 @@ window.onload = function () {
     liElem.onclick = function () {
       let guess = (this.innerHTML);
       this.setAttribute("class", "active");
+      this.setAttribute("style", "background-color:rgba(72, 252, 17, 0.8); color:white;")
       this.onclick = null;
       for (var i = 0; i < word.length; i++) {
         if (word[i] === guess) {
@@ -109,7 +110,7 @@ window.onload = function () {
       }
       var j = (word.indexOf(guess));
       if (j === -1) {
-        lives -= 1;
+        life -= 1;
         showLives();
         
       } else {
@@ -133,7 +134,7 @@ window.onload = function () {
         keys();
 
         life = 10;
-        counter =0;
+        counter = 0;
         space = 0;
         geusses = [];
 
@@ -148,6 +149,29 @@ window.onload = function () {
 
     startPlay();
 
+    // Hint
 
+    showHint.onclick = function() {
+
+      let hints = [
+        ["Noucamp", "Piazza Duomo", "Native city of the Beatles", "Biggest river in Macedonia", "Coming from Portugal", "Red Devils", "Gazza's first club"],
+        ["Tom Cruise in leading role", "Oposite of freeze", "Historical drama", "Fishes are the main characters", "Bart and Lisa"],
+        ["The capital city of Macedonia", "Home of AC Milan and Inter", "Spanish capital", "Austrian capital", "Portugal capital"]
+    ];
+
+    let categoryIndex = categories.indexOf(chosenCategory);
+    let hintIndex = chosenCategory.indexOf(word);
+    clueText.innerHTML = "Clue: - " +  hints [categoryIndex][hintIndex];
+  };
+
+   // Reset - Play again
+
+   document.getElementById('reset').onclick = function() {
+    correctWord.parentNode.removeChild(correctWord);
+    createdUl.parentNode.removeChild(createdUl);
+    document.getElementsByTagName('li').setAttribute("style", "background-color:white; color:rgb(72, 212, 17);")
+    showClue.innerHTML = "";
+    startPlay();
+  }
 }
 

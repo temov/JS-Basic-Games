@@ -1,5 +1,5 @@
 body {
-    background-color: rgb(72, 212, 17);
+    background-color: rgba(74, 218, 16);
     font-size: 18px;
     font-family: Arial, Helvetica, sans-serif;
     color: white;
@@ -52,10 +52,10 @@ li{
     padding: 10px;
     border-radius: 5px;
 
-    
-    
-    
 }
+
+
+    
 
 #hint:hover, #reset:hover{
 
